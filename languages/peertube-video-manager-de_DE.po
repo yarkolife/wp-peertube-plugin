@@ -1,0 +1,271 @@
+# German translation for PeerTube Video Manager
+# Copyright (C) 2025
+# This file is distributed under the same license as the PeerTube Video Manager plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: PeerTube Video Manager 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-01 12:00+0000\n"
+"PO-Revision-Date: 2025-01-01 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-pt-formatter.php
+msgid "In der Zukunft"
+msgstr "In der Zukunft"
+
+msgid "Gerade eben"
+msgstr "Gerade eben"
+
+msgid "Vor 1 Minute"
+msgstr "Vor 1 Minute"
+
+#, c-format
+msgid "Vor %d Minuten"
+msgstr "Vor %d Minuten"
+
+msgid "Vor 1 Stunde"
+msgstr "Vor 1 Stunde"
+
+#, c-format
+msgid "Vor %d Stunden"
+msgstr "Vor %d Stunden"
+
+msgid "Vor 1 Tag"
+msgstr "Vor 1 Tag"
+
+#, c-format
+msgid "Vor %d Tagen"
+msgstr "Vor %d Tagen"
+
+msgid "Vor 1 Woche"
+msgstr "Vor 1 Woche"
+
+#, c-format
+msgid "Vor %d Wochen"
+msgstr "Vor %d Wochen"
+
+msgid "Vor 1 Monat"
+msgstr "Vor 1 Monat"
+
+#, c-format
+msgid "Vor %d Monaten"
+msgstr "Vor %d Monaten"
+
+msgid "Vor 1 Jahr"
+msgstr "Vor 1 Jahr"
+
+#, c-format
+msgid "Vor %d Jahren"
+msgstr "Vor %d Jahren"
+
+#, c-format
+msgid "%s Aufruf"
+msgstr "%s Aufruf"
+
+#, c-format
+msgid "%s Aufrufe"
+msgstr "%s Aufrufe"
+
+#: includes/class-pt-api.php
+#, c-format
+msgid "Verbindung erfolgreich! Instanz: %s"
+msgstr "Verbindung erfolgreich! Instanz: %s"
+
+msgid "Verbindung fehlgeschlagen. Bitte überprüfen Sie die URL."
+msgstr "Verbindung fehlgeschlagen. Bitte überprüfen Sie die URL."
+
+#: includes/class-pt-settings.php
+msgid "PeerTube Video Manager"
+msgstr "PeerTube Video Manager"
+
+msgid "PeerTube Videos"
+msgstr "PeerTube Videos"
+
+msgid "Bitte geben Sie eine gültige URL ein (http:// oder https://)."
+msgstr "Bitte geben Sie eine gültige URL ein (http:// oder https://)."
+
+msgid "PeerTube Instanz URL"
+msgstr "PeerTube Instanz URL"
+
+msgid "Die vollständige URL Ihrer PeerTube-Instanz (z.B. https://lokalmedial.de)"
+msgstr "Die vollständige URL Ihrer PeerTube-Instanz (z.B. https://lokalmedial.de)"
+
+msgid "Verbindung testen"
+msgstr "Verbindung testen"
+
+msgid "Standard-Kanäle"
+msgstr "Standard-Kanäle"
+
+msgid "Liste der Kanal-Handles, einen pro Zeile (z.B. ok_dessau, ok_magdeburg). Wird für [pt-latest-per-channel] verwendet, wenn kein channels-Attribut angegeben ist."
+msgstr "Liste der Kanal-Handles, einen pro Zeile (z.B. ok_dessau, ok_magdeburg). Wird für [pt-latest-per-channel] verwendet, wenn kein channels-Attribut angegeben ist."
+
+msgid "Cache-Zeit für Videos (Minuten)"
+msgstr "Cache-Zeit für Videos (Minuten)"
+
+msgid "Wie lange Video-Listen zwischengespeichert werden (Standard: 5 Minuten)"
+msgstr "Wie lange Video-Listen zwischengespeichert werden (Standard: 5 Minuten)"
+
+msgid "Cache-Zeit für Konfiguration (Stunden)"
+msgstr "Cache-Zeit für Konfiguration (Stunden)"
+
+msgid "Wie lange Kategorien und Konfiguration zwischengespeichert werden (Standard: 24 Stunden)"
+msgstr "Wie lange Kategorien und Konfiguration zwischengespeichert werden (Standard: 24 Stunden)"
+
+msgid "Videos pro Seite"
+msgstr "Videos pro Seite"
+
+msgid "Standard-Anzahl von Videos, die angezeigt werden (Standard: 8)"
+msgstr "Standard-Anzahl von Videos, die angezeigt werden (Standard: 8)"
+
+msgid "Einstellungen speichern"
+msgstr "Einstellungen speichern"
+
+msgid "Cache-Verwaltung"
+msgstr "Cache-Verwaltung"
+
+msgid "Löschen Sie den Cache, um aktualisierte Daten von PeerTube zu laden."
+msgstr "Löschen Sie den Cache, um aktualisierte Daten von PeerTube zu laden."
+
+msgid "Cache löschen"
+msgstr "Cache löschen"
+
+msgid "Shortcode-Beispiele"
+msgstr "Shortcode-Beispiele"
+
+msgid "Letzte Videos der Instanz"
+msgstr "Letzte Videos der Instanz"
+
+msgid "Je ein Video pro Kanal"
+msgstr "Je ein Video pro Kanal"
+
+msgid "Videos eines Kanals"
+msgstr "Videos eines Kanals"
+
+msgid "Einzelnes Video mit Details"
+msgstr "Einzelnes Video mit Details"
+
+msgid "Video per Video-Nummer"
+msgstr "Video per Video-Nummer"
+
+msgid "Suchformular"
+msgstr "Suchformular"
+
+msgid "Suchergebnisse"
+msgstr "Suchergebnisse"
+
+msgid "Sie haben keine Berechtigung für diese Aktion."
+msgstr "Sie haben keine Berechtigung für diese Aktion."
+
+#, c-format
+msgid "Cache geleert! %d Einträge wurden gelöscht."
+msgstr "Cache geleert! %d Einträge wurden gelöscht."
+
+msgid "Keine Berechtigung."
+msgstr "Keine Berechtigung."
+
+msgid "Keine URL angegeben."
+msgstr "Keine URL angegeben."
+
+#: shortcodes/
+msgid "Keine Videos gefunden."
+msgstr "Keine Videos gefunden."
+
+msgid "Keine Kanäle angegeben. Bitte verwenden Sie das channels-Attribut oder konfigurieren Sie Standard-Kanäle in den Einstellungen."
+msgstr "Keine Kanäle angegeben. Bitte verwenden Sie das channels-Attribut oder konfigurieren Sie Standard-Kanäle in den Einstellungen."
+
+msgid "Keine gültigen Kanäle gefunden."
+msgstr "Keine gültigen Kanäle gefunden."
+
+msgid "Bitte geben Sie einen Kanal mit dem channel-Attribut an."
+msgstr "Bitte geben Sie einen Kanal mit dem channel-Attribut an."
+
+#, c-format
+msgid "Keine Videos im Kanal \"%s\" gefunden."
+msgstr "Keine Videos im Kanal \"%s\" gefunden."
+
+msgid "Bitte geben Sie eine Video-ID (id) oder Video-Nummer (number) an."
+msgstr "Bitte geben Sie eine Video-ID (id) oder Video-Nummer (number) an."
+
+#, c-format
+msgid "Video mit Video-Nummer \"%s\" nicht gefunden."
+msgstr "Video mit Video-Nummer \"%s\" nicht gefunden."
+
+#, c-format
+msgid "Video mit ID \"%s\" nicht gefunden."
+msgstr "Video mit ID \"%s\" nicht gefunden."
+
+msgid "Suche in der Mediathek"
+msgstr "Suche in der Mediathek"
+
+msgid "Suchen"
+msgstr "Suchen"
+
+msgid "Bitte geben Sie einen Suchbegriff ein."
+msgstr "Bitte geben Sie einen Suchbegriff ein."
+
+#, c-format
+msgid "Keine Ergebnisse für \"%s\" gefunden."
+msgstr "Keine Ergebnisse für \"%s\" gefunden."
+
+#, c-format
+msgid "%1$d Ergebnisse für \"%2$s\""
+msgstr "%1$d Ergebnisse für \"%2$s\""
+
+msgid "&laquo; Zurück"
+msgstr "&laquo; Zurück"
+
+msgid "Weiter &raquo;"
+msgstr "Weiter &raquo;"
+
+#: templates/
+msgid "Länge"
+msgstr "Länge"
+
+msgid "Kategorie"
+msgstr "Kategorie"
+
+msgid "Veröffentlicht"
+msgstr "Veröffentlicht"
+
+msgid "Aufrufe"
+msgstr "Aufrufe"
+
+msgid "Sendeverantwortung"
+msgstr "Sendeverantwortung"
+
+msgid "Video-Nummer"
+msgstr "Video-Nummer"
+
+msgid "Länge:"
+msgstr "Länge:"
+
+msgid "Kategorie:"
+msgstr "Kategorie:"
+
+msgid "Veröffentlicht:"
+msgstr "Veröffentlicht:"
+
+msgid "Aufrufe:"
+msgstr "Aufrufe:"
+
+msgid "Sendeverantwortung:"
+msgstr "Sendeverantwortung:"
+
+msgid "Video-Nummer:"
+msgstr "Video-Nummer:"
+
+msgid "Tags:"
+msgstr "Tags:"
+
+msgid "Beschreibung"
+msgstr "Beschreibung"
+
+msgid "Auf PeerTube ansehen"
+msgstr "Auf PeerTube ansehen"
+
