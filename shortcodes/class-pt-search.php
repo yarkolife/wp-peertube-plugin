@@ -94,18 +94,24 @@ class PT_Search {
 
 		$per_page = absint( $atts['per_page'] );
 		
-		// Get search query
-		$query = isset( $_GET['pt_search'] ) ? sanitize_text_field( $_GET['pt_search'] ) : '';
+		// Get search query - support both pt_search and standard WordPress 's' parameter
+		$query = '';
+		if ( isset( $_GET['pt_search'] ) && ! empty( $_GET['pt_search'] ) ) {
+			$query = sanitize_text_field( $_GET['pt_search'] );
+		} elseif ( isset( $_GET['s'] ) && ! empty( $_GET['s'] ) ) {
+			// Support standard WordPress search parameter
+			$query = sanitize_text_field( $_GET['s'] );
+		}
 		
-		// Show "enter search term" message only on first visit (when pt_search parameter is not in URL)
+		// Show "enter search term" message only on first visit (when search parameters are not in URL)
 		// Hide it completely if search has been performed or if there are any results
-		if ( empty( $query ) && ! isset( $_GET['pt_search'] ) ) {
+		if ( empty( $query ) && ! isset( $_GET['pt_search'] ) && ! isset( $_GET['s'] ) ) {
 			return '<p class="pt-no-results">' . esc_html__( 'Bitte geben Sie einen Suchbegriff ein.', 'peertube-video-manager' ) . '</p>';
 		}
 		
-		// If pt_search parameter exists in URL (even if empty), don't show the initial message
+		// If search parameter exists in URL (even if empty), don't show the initial message
 		// This handles cases where form was submitted with empty value
-		if ( empty( $query ) && isset( $_GET['pt_search'] ) ) {
+		if ( empty( $query ) && ( isset( $_GET['pt_search'] ) || isset( $_GET['s'] ) ) ) {
 			// Return empty or show "no results" message instead
 			return '';
 		}

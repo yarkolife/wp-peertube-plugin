@@ -148,6 +148,30 @@ class PT_Settings {
 			'sanitize_callback' => 'sanitize_hex_color',
 			'default'           => '#ffffff',
 		) );
+
+		register_setting( 'pt_vm_settings', 'pt_vm_redirect_wp_search', array(
+			'type'              => 'boolean',
+			'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+			'default'           => false,
+		) );
+
+		register_setting( 'pt_vm_settings', 'pt_vm_wp_search_section_title', array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => __( 'PeerTube Videos', 'peertube-video-manager' ),
+		) );
+
+		register_setting( 'pt_vm_settings', 'pt_vm_wp_search_wp_option_text', array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => __( 'Auf der Webseite suchen', 'peertube-video-manager' ),
+		) );
+
+		register_setting( 'pt_vm_settings', 'pt_vm_wp_search_peertube_option_text', array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => __( 'In Mediathek LokalMedial.de suchen', 'peertube-video-manager' ),
+		) );
 	}
 
 	/**
@@ -161,11 +185,17 @@ class PT_Settings {
 		}
 
 		if ( isset( $_POST['option_page'] ) && 'pt_vm_settings' === $_POST['option_page'] ) {
-			// Handle checkbox
+			// Handle checkboxes
 			if ( isset( $_POST['pt_vm_show_views'] ) && '1' === $_POST['pt_vm_show_views'] ) {
 				update_option( 'pt_vm_show_views', true );
 			} else {
 				update_option( 'pt_vm_show_views', false );
+			}
+
+			if ( isset( $_POST['pt_vm_redirect_wp_search'] ) && '1' === $_POST['pt_vm_redirect_wp_search'] ) {
+				update_option( 'pt_vm_redirect_wp_search', true );
+			} else {
+				update_option( 'pt_vm_redirect_wp_search', false );
 			}
 		}
 	}
@@ -268,12 +298,16 @@ class PT_Settings {
 		$cache_time_config = get_option( 'pt_vm_cache_time_config', 24 );
 		$videos_per_page   = get_option( 'pt_vm_videos_per_page', 8 );
 		$show_views        = get_option( 'pt_vm_show_views', false );
+		$redirect_wp_search = get_option( 'pt_vm_redirect_wp_search', false );
 		$search_page_id    = get_option( 'pt_vm_search_page_id', 0 );
 		$video_page_id     = get_option( 'pt_vm_video_page_id', 0 );
 		$peertube_button_text = get_option( 'pt_vm_peertube_button_text', __( 'Auf PeerTube ansehen', 'peertube-video-manager' ) );
 		$button_color      = get_option( 'pt_vm_button_color', '#1e40af' );
 		$button_hover_color = get_option( 'pt_vm_button_hover_color', '#f59e0b' );
 		$button_text_color = get_option( 'pt_vm_button_text_color', '#ffffff' );
+		$wp_search_section_title = get_option( 'pt_vm_wp_search_section_title', __( 'PeerTube Videos', 'peertube-video-manager' ) );
+		$wp_search_wp_option_text = get_option( 'pt_vm_wp_search_wp_option_text', __( 'Auf der Webseite suchen', 'peertube-video-manager' ) );
+		$wp_search_peertube_option_text = get_option( 'pt_vm_wp_search_peertube_option_text', __( 'In Mediathek LokalMedial.de suchen', 'peertube-video-manager' ) );
 		?>
 		<div class="wrap">
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
@@ -413,6 +447,81 @@ class PT_Settings {
 							</label>
 							<p class="description">
 								<?php esc_html_e( 'Wenn aktiviert, wird die Anzahl der Aufrufe bei jedem Video angezeigt.', 'peertube-video-manager' ); ?>
+							</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<th scope="row">
+							<label for="pt_vm_redirect_wp_search">
+								<?php esc_html_e( 'PeerTube-Suche in WordPress-Suchform', 'peertube-video-manager' ); ?>
+							</label>
+						</th>
+						<td>
+							<label>
+								<input type="checkbox" 
+									   id="pt_vm_redirect_wp_search" 
+									   name="pt_vm_redirect_wp_search" 
+									   value="1" 
+									   <?php checked( $redirect_wp_search, true ); ?>>
+								<?php esc_html_e( 'PeerTube-Suche in Standard-WordPress-Suchform hinzufügen', 'peertube-video-manager' ); ?>
+							</label>
+							<p class="description">
+								<?php esc_html_e( 'Wenn aktiviert, wird in der Standard-WordPress-Suchform ein Checkbox "In PeerTube-Videos suchen" hinzugefügt. Wenn aktiviert, wird die Suche auf die PeerTube-Suchseite umgeleitet. Wenn nicht aktiviert, funktioniert die Standard-WordPress-Suche normal.', 'peertube-video-manager' ); ?>
+							</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<th scope="row">
+							<label for="pt_vm_wp_search_section_title">
+								<?php esc_html_e( 'Titel des PeerTube-Bereichs', 'peertube-video-manager' ); ?>
+							</label>
+						</th>
+						<td>
+							<input type="text" 
+								   id="pt_vm_wp_search_section_title" 
+								   name="pt_vm_wp_search_section_title" 
+								   value="<?php echo esc_attr( $wp_search_section_title ); ?>" 
+								   class="regular-text">
+							<p class="description">
+								<?php esc_html_e( 'Titel des Abschnitts mit PeerTube-Videos auf der WordPress-Suchergebnisseite.', 'peertube-video-manager' ); ?>
+							</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<th scope="row">
+							<label for="pt_vm_wp_search_wp_option_text">
+								<?php esc_html_e( 'Text für Option "Auf der Website suchen"', 'peertube-video-manager' ); ?>
+							</label>
+						</th>
+						<td>
+							<input type="text" 
+								   id="pt_vm_wp_search_wp_option_text" 
+								   name="pt_vm_wp_search_wp_option_text" 
+								   value="<?php echo esc_attr( $wp_search_wp_option_text ); ?>" 
+								   class="regular-text">
+							<p class="description">
+								<?php esc_html_e( 'Text für die erste Option im Dropdown der Suchform.', 'peertube-video-manager' ); ?>
+							</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<th scope="row">
+							<label for="pt_vm_wp_search_peertube_option_text">
+								<?php esc_html_e( 'Text für Option "In PeerTube-Videos suchen"', 'peertube-video-manager' ); ?>
+							</label>
+						</th>
+						<td>
+							<input type="text" 
+								   id="pt_vm_wp_search_peertube_option_text" 
+								   name="pt_vm_wp_search_peertube_option_text" 
+								   value="<?php echo esc_attr( $wp_search_peertube_option_text ); ?>" 
+								   class="regular-text">
+							<p class="description">
+								<?php esc_html_e( 'Text für die zweite Option im Dropdown der Suchform.', 'peertube-video-manager' ); ?>
 							</p>
 						</td>
 					</tr>

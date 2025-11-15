@@ -89,6 +89,28 @@ und dieses Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 - Föderierte Videos haben möglicherweise eingeschränkte Metadaten
 - Cache muss manuell geleert werden für sofortige Updates
 
+## [1.1.6] - 2025-01-XX
+
+### Hinzugefügt
+- Integration der PeerTube-Suche in die Standard-WordPress-Suchform
+- Dropdown-Auswahl für Suchbereich (WordPress-Website oder PeerTube-Videos)
+- JavaScript-basierte Modifikation der Suchform für bessere Kompatibilität
+- Einstellungen für anpassbare Texte der Dropdown-Optionen:
+  - "Text für Option 'Auf der Website suchen'"
+  - "Text für Option 'In PeerTube-Videos suchen'"
+- Automatische Umleitung zur PeerTube-Suchseite bei Auswahl "PeerTube-Videos suchen"
+- Unterstützung für beide Suchparameter (`s` und `pt_search`) in Shortcodes
+
+### Behoben
+- Verbesserte Kompatibilität mit verschiedenen WordPress-Themes
+- CSS-Überschreibungen für korrekte Anzeige der Suchform
+- Fehlerbehandlung in JavaScript-Code
+
+### Geändert
+- Standardwerte für Dropdown-Optionen:
+  - "Auf der Webseite suchen" (statt "Auf der Website suchen")
+  - "In Mediathek LokalMedial.de suchen" (statt "In PeerTube-Videos suchen")
+
 ## [1.1.5] - 2025-01-XX
 
 ### Behoben
@@ -183,6 +205,7 @@ und dieses Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 - MINOR Version: Neue Funktionen (abwärtskompatibel)
 - PATCH Version: Bugfixes (abwärtskompatibel)
 
+[1.1.6]: https://github.com/yarkolife/wp-peertube-plugin/releases/tag/v1.1.6
 [1.1.5]: https://github.com/yarkolife/wp-peertube-plugin/releases/tag/v1.1.5
 [1.1.4]: https://github.com/yarkolife/wp-peertube-plugin/releases/tag/v1.1.4
 [1.1.3]: https://github.com/yarkolife/wp-peertube-plugin/releases/tag/v1.1.3
@@ -193,5 +216,5 @@ und dieses Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 [1.0.8]: https://github.com/yarkolife/wp-peertube-plugin/releases/tag/v1.0.8
 [1.0.7]: https://github.com/yarkolife/wp-peertube-plugin/releases/tag/v1.0.7
 [1.0.0]: https://github.com/yarkolife/wp-peertube-plugin/releases/tag/v1.0.0
-[Unreleased]: https://github.com/yarkolife/wp-peertube-plugin/compare/v1.1.5...HEAD
+[Unreleased]: https://github.com/yarkolife/wp-peertube-plugin/compare/v1.1.6...HEAD
 
