@@ -1,0 +1,71 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Docker
+.dockerignore
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Model cache (large files)
+/srv/ai-model-cache/
+models/
+
+# Test files
+coverage/
+.nyc_output/
+*.test.js
+*.spec.js
+
+# Deployment files (if sensitive)
+deploy.sh
+deploy-git.sh
+DEPLOY.md
+SETUP-GIT.md
+
+# Other project files not part of this plugin
+docker-compose.yml
+plugins/
+test-ai-moderation.sh
+.cursor/

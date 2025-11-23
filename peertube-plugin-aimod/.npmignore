@@ -1,0 +1,20 @@
+# Development files
+*.log
+.DS_Store
+node_modules/
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Documentation (will be included via files in package.json)
+# README.md
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+
