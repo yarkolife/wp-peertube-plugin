@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PeerTube Video Manager
  * Description: Integrate PeerTube videos into WordPress with shortcodes for displaying videos from PeerTube instances. Supports custom metadata including Sendeverantwortung.
- * Version: 1.1.6
+ * Version: 1.1.7
  * Author: Pavlo Kozakov
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'PT_VM_VERSION', '1.1.5' );
+define( 'PT_VM_VERSION', '1.1.7' );
 define( 'PT_VM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PT_VM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'PT_VM_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -80,8 +80,10 @@ class PeerTube_Video_Manager {
 		require_once PT_VM_PLUGIN_DIR . 'shortcodes/class-pt-last-videos.php';
 		require_once PT_VM_PLUGIN_DIR . 'shortcodes/class-pt-latest-per-channel.php';
 		require_once PT_VM_PLUGIN_DIR . 'shortcodes/class-pt-channel-videos.php';
+		require_once PT_VM_PLUGIN_DIR . 'shortcodes/class-pt-channels-ordered.php';
 		require_once PT_VM_PLUGIN_DIR . 'shortcodes/class-pt-video-detail.php';
 		require_once PT_VM_PLUGIN_DIR . 'shortcodes/class-pt-search.php';
+		require_once PT_VM_PLUGIN_DIR . 'shortcodes/class-pt-peertube-search.php';
 	}
 
 	/**
@@ -239,8 +241,10 @@ class PeerTube_Video_Manager {
 		PT_Last_Videos::register();
 		PT_Latest_Per_Channel::register();
 		PT_Channel_Videos::register();
+		PT_Channels_Ordered::register();
 		PT_Video_Detail::register();
 		PT_Search::register();
+		PT_PeerTube_Search::register();
 	}
 
 	/**

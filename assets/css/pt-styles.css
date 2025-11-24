@@ -1060,3 +1060,25 @@ body.search .pt-wp-search-separator::after {
 	margin-left: 0 !important;
 }
 
+/* ==========================================================================
+   Channels Ordered Shortcode
+   ========================================================================== */
+
+.pt-channel-section {
+	margin-bottom: 2rem;
+}
+
+.pt-channel-section:last-child {
+	margin-bottom: 0;
+}
+
+.pt-channel-name {
+	margin: 0 0 1rem 0;
+	font-size: 1.25rem;
+	line-height: 1.4;
+	font-weight: 700;
+	color: inherit;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--pt-border-color, rgba(0, 0, 0, 0.1));
+}
+
